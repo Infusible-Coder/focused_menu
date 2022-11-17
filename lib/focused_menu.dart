@@ -24,7 +24,8 @@ class FocusedMenuHolder extends StatefulWidget {
   const FocusedMenuHolder(
       {Key? key,
       required this.child,
-      required this.onPressed,
+      required this.onTap,
+         required this.onLongTap,
       required this.menuItems,
       this.duration,
       this.menuBoxDecoration,
