@@ -4,11 +4,13 @@ class FocusedMenuItem {
   Color? backgroundColor;
   Widget title;
   Icon? trailingIcon;
-  Function onPressed;
+  Function onTap;
+    Function onLongTap;
 
   FocusedMenuItem(
       {this.backgroundColor,
       required this.title,
       this.trailingIcon,
-      required this.onPressed});
+       required this.onLongTap,
+      required this.onTap});
 }
