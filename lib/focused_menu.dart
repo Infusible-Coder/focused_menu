@@ -11,7 +11,8 @@ class FocusedMenuHolder extends StatefulWidget {
   final List<FocusedMenuItem> menuItems;
   final bool? animateMenuItems;
   final BoxDecoration? menuBoxDecoration;
-  final Function onPressed;
+  final Function onLongTap;
+  final Function onTap;
   final Duration? duration;
   final double? blurSize;
   final Color? blurBackgroundColor;
@@ -60,14 +61,13 @@ class _FocusedMenuHolderState extends State<FocusedMenuHolder> {
   Widget build(BuildContext context) {
     return GestureDetector(
         key: containerKey,
+      
         onTap: () async {
-          widget.onPressed();
-          if (widget.openWithTap) {
-            await openMenu(context);
-          }
+           widget.onTap();
         },
         onLongPress: () async {
-          if (!widget.openWithTap) {
+          widget.onLongTap();
+          if (widget.openWithTap) {
             await openMenu(context);
           }
         },
