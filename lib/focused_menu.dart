@@ -183,7 +183,7 @@ class FocusedMenuDetails extends StatelessWidget {
                             onTap:
                                 () {
                               Navigator.pop(context);
-                              item.onPressed();
+                              item.onLongTap();
 
                             },
                             child: Container(
